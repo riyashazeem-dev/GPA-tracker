@@ -1,74 +1,36 @@
-# Supabase Setup
+# Supabase setup
 
-## 1. Create project
-1. Create a project at https://supabase.com.
-2. Copy the **Project URL** and **anon / publishable key** (Settings → API).
+Use these steps to configure an existing Supabase project or provision a new backend for this application.
 
-## 2. Configure the frontend
-Set these in `src/environments/environment.ts` (and `environment.prod.ts`):
+## Connect the frontend
+
+Copy the project URL and **publishable key** from Supabase. Set them in `src/environments/environment.ts` and `src/environments/environment.prod.ts`.
 
 ```ts
-supabase: { url: 'https://<ref>.supabase.co', anonKey: '<anon-publishable-key>' }
+supabase: { url: 'https://<project-ref>.supabase.co', anonKey: '<publishable-key>' }
 ```
 
-> Never use the `service_role` key in the browser.
+The publishable key is intended for browser use. Keep the service-role key and Google OAuth client secret in their server-side settings.
 
-## 3. Apply migrations & seeds
-Run the SQL in order (Supabase SQL Editor, or CLI `supabase db push`):
+## Apply database migrations
 
-```
-supabase/migrations/0001_extensions.sql
-supabase/migrations/0002_departments.sql
-supabase/migrations/0003_semesters.sql
-supabase/migrations/0004_curriculum_versions.sql
-supabase/migrations/0005_courses.sql
-supabase/migrations/0006_elective_requirements.sql
-supabase/migrations/0007_profiles.sql
-supabase/migrations/0008_grading.sql
-supabase/migrations/0009_results.sql
-supabase/migrations/0010_student_elective_selections.sql
-supabase/migrations/0011_repeat_exam_records.sql
-supabase/migrations/0012_indexes.sql
-supabase/migrations/0013_views.sql
-supabase/migrations/0014_rls.sql
-supabase/migrations/0015_prediction_settings.sql
-supabase/migrations/0016_results_is_predicted.sql
-supabase/migrations/0017_profiles_current_semester.sql
-supabase/migrations/0018_ai_config.sql
+From the repository root, link the CLI to the intended project and review the pending migrations before applying them.
 
-supabase/seed/0001_departments.sql
-supabase/seed/0002_curriculum_versions.sql   -- PENDING SPEC
-supabase/seed/0003_elective_requirements.sql
-supabase/seed/0004_courses.sql                -- PENDING SPEC
-supabase/seed/0005_grading.sql                -- PENDING SPEC
+```sh
+npx supabase login
+npx supabase link --project-ref <project-ref>
+npx supabase db push --dry-run --remote
+npx supabase db push --remote
 ```
 
-## Google Authentication
-1. In Google Cloud Console, create an OAuth 2.0 client (Web application).
-2. Authorized redirect URI: `https://<ref>.supabase.co/auth/v1/callback`.
-3. In Supabase → Authentication → Providers → Google, enable and paste the
-   Client ID and Secret.
-4. In Authentication → URL Configuration, set Site URL to your app origin and
-   add `<origin>/auth/callback` to allowed redirect URLs.
+The migrations include the official curriculum and grading data in `0021`, Data API permissions in `0022`, and the programme and grade-saving workflow in `0023`. Local seed files are for development. The signup trigger creates a profile for each new account, and row-level security restricts grade access to the owning account.
 
-## 4. Validate
-```bash
-# set env first
-npm run validate:curriculum
-```
-Writes `docs/VALIDATION_REPORT.md`.
+## Enable Google sign-in
 
-## AI Assistant (Edge Function)
-```bash
-supabase secrets set OPENROUTER_API_KEY=sk-or-xxxx
-supabase functions deploy ai-assistant
-```
-See `docs/AI_ASSISTANT.md`.
+1. In Google Auth Platform, create a **Web application** OAuth client.
+2. Under **Authorized JavaScript origins**, add the app's origin. For local development use `http://localhost:4200`.
+3. Under **Authorized redirect URIs**, add the callback shown by the Supabase Google provider. It is normally `https://<project-ref>.supabase.co/auth/v1/callback`.
+4. In **Supabase → Authentication → Sign In / Providers → Google**, enable the provider and save the OAuth client ID and secret.
+5. In **Supabase → Authentication → URL Configuration**, set the app's **Site URL** and allow its complete `/auth/callback` URL under **Redirect URLs**.
 
-## Notes
-- `0002_curriculum_versions.sql`, `0004_courses.sql`, `0005_grading.sql` are
-  templates awaiting the official curriculum and regulations. They contain no
-  invented data.
-- The `handle_new_user` trigger auto-creates a `profiles` row on signup.
-- RLS: reference data is read-only for authenticated users; only admins write.
-  Students access only their own results and elective selections.
+See the [deployment guide](DEPLOYMENT.md) for the hosted URL and [account tests](AUTH_AND_TESTING.md) for sign-in and save verification.

@@ -1,17 +1,28 @@
 # Smart GPA Tracker
 
-University GPA tracker for Information Systems, Software Engineering and Data Science. Students sign in with Google, select a programme on their first visit, and track their module grades and cumulative GPA.
+Track university grades and GPA for Information Systems (IS), Software Engineering (SE) and Data Science (DS).
+
+**[Open the live GPA Tracker](https://gpa-tracker-0obs.netlify.app)** · [Report an issue](https://github.com/riyashazeem-dev/GPA-tracker/issues)
+
+## Features
+
+- Google sign-in with a separate programme and grade history for each account.
+- Eight semesters of predefined university modules, with grades saved through the dashboard.
+- Credit-weighted semester GPA and CGPA, plus degree classification. The dashboard marks the class as provisional until the required results are complete.
+- Target GPA planner that suggests grades using module credits.
+
+The Angular frontend is hosted on Netlify. Supabase handles Google authentication, PostgreSQL storage and account-level access.
 
 ## Run locally
 
-Use Node.js 24.15.0 or later in the Node 24 series and npm. The Angular frontend uses the public project URL and publishable key in `src/environments/environment*.ts`.
+Use Node.js 24.15.0 or later in the Node 24 series and npm.
 
 ```sh
 npm ci
 npm start
 ```
 
-Open [the local app](http://localhost:4200). Choose a Google account with access to the configured OAuth app.
+Open [localhost:4200](http://localhost:4200). If you are setting up your own backend, follow the [Supabase setup guide](docs/SUPABASE_SETUP.md) to configure it before signing in.
 
 ## Verify changes
 
@@ -21,15 +32,18 @@ npm test -- --watch=false
 npm run build
 ```
 
-The production build is in `dist/smart-gpa-tracker/browser`.
+The production build goes to `dist/smart-gpa-tracker/browser`.
 
-## Project layout
+## Documentation
 
-- `src/app/features/` contains sign-in, programme selection, the dashboard and the target GPA planner.
-- `src/app/services/gpa/` contains the shared grading and credit-weighted GPA rules.
-- `supabase/migrations/` contains the database schema, curriculum, grading scale and policies.
-- `supabase/tests/` contains database workflow and isolation checks.
+| Guide | Covers |
+| --- | --- |
+| [Deployment](docs/DEPLOYMENT.md) | GitHub, Netlify and hosted Google callback settings |
+| [Supabase setup](docs/SUPABASE_SETUP.md) | Database migrations and Google provider setup |
+| [Auth and account testing](docs/AUTH_AND_TESTING.md) | First login, grade saving, returning users and account isolation |
+| [GPA rules](GPA_RULES.md) | Grade points, elective and repeat rules, and degree classification |
+| [Curriculum](CURRICULUM_SPEC.md) | Programme modules and credit requirements |
 
-The hosted project uses the supplied curriculum for all three programmes. Migrations 0021 and 0023 install the reference data and programme grade workflow respectively.
+Application code is in `src/app/`. Database migrations and SQL tests are in `supabase/`.
 
-See the [deployment guide](docs/DEPLOYMENT.md) for GitHub, Netlify and Google OAuth configuration, and [GPA rules](GPA_RULES.md) for the grading policy.
+Built by [riyashazeem-dev](https://github.com/riyashazeem-dev).

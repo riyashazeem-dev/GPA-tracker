@@ -1,36 +1,13 @@
-# Curriculum Specification
+# Curriculum specification
 
-> Status: **PENDING SPEC**. The complete IS / SE / DS programme structure and
-> course catalogue must be transcribed from the official university curriculum in
-> the project specification. No course modules are invented in this repository.
->
-> Database structure to hold this data is implemented in
-> `supabase/migrations/` and `supabase/seed/` (course seed is a pending template).
+The application uses the supplied Faculty of Computing curricula for three four-year programmes. Each programme has eight semesters. The module counts include optional electives.
 
-## Programme
-| Field        | Value                    |
-| ------------ | ------------------------ |
-| Faculty      | Faculty of Computing     |
-| Department   | TBD                      |
-| Programme    | TBD                      |
-| Duration     | TBD years / 8 semesters  |
-| Total credits| TBD                      |
+| Programme | Modules in catalogue | Programme credits |
+| --- | ---: | ---: |
+| [Information Systems (IS)](curriculum-import/is-curriculum.json) | 85 | 138 |
+| [Software Engineering (SE)](curriculum-import/se-curriculum.json) | 75 | 157 |
+| [Data Science (DS)](curriculum-import/ds-curriculum.json) | 80 | 120 |
 
-## Course Catalogue
-_To be transcribed. One row per course; do not fabricate entries._
+Programme credit totals use the required elective credits, while the catalogue includes every elective option. GPA includes eligible elective modules the student registers for. Modules without a numerical credit value are stored with `null` credits.
 
-| Code | Title | Credits | Category | Semester | Year | Prereqs | Practical |
-| ---- | ----- | ------- | -------- | -------- | ---- | ------- | --------- |
-| TBD  | TBD   | TBD     | TBD      | TBD      | TBD  | TBD     | TBD       |
-
-## Semester Structure
-_To be transcribed from the curriculum._
-
-| Semester | Year | Courses |
-| -------- | ---- | ------- |
-| 1        | TBD  | TBD     |
-| ...      | ...  | ...     |
-
-## Notes
-- Curriculum data is seeded into `curricula` / `courses` tables in Phase 2.
-- `CurriculumService` reads this data; it never generates courses.
+[Migration 0021](supabase/migrations/0021_official_curriculum_data.sql) imports the curriculum and grading reference data into Supabase. The [curriculum validation report](curriculum-import/curriculum-validation-report.md) lists semester totals, elective requirements and source details that need faculty confirmation. See the [GPA rules](GPA_RULES.md) for how grades contribute to a degree classification.
