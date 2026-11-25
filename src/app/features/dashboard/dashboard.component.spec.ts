@@ -4,6 +4,7 @@ import { provideRouter } from '@angular/router';
 import { RouterTestingHarness } from '@angular/router/testing';
 import { describe, expect, it, vi } from 'vitest';
 import { Course, CourseResult, Profile } from '../../models';
+import { ElectiveService } from '../../services/elective.service';
 import { ProfileService } from '../../services/profile.service';
 import { StudentRecordsService } from '../../services/student-records.service';
 import { DashboardComponent } from './dashboard.component';
@@ -49,6 +50,7 @@ describe('Student dashboard', () => {
           { path: 'dashboard', component: DashboardComponent },
           { path: 'auth', component: SignedOutPage },
         ]),
+        { provide: ElectiveService, useValue: { getRequirements: async () => [] } },
         {
           provide: ProfileService,
           useValue: {
@@ -75,6 +77,8 @@ describe('Student dashboard', () => {
     expect(page.textContent).toContain('Information Systems (IS)');
     expect(page.querySelectorAll('nav a')).toHaveLength(8);
     expect(dashboard.semesterGpa()).toBeNull();
+    expect(dashboard.degreeClass()).toEqual({ label: 'First Class', finalGpa: null });
+    expect(page.textContent).toContain('Provisional · based on current CGPA');
     expect(dashboard.pending().map((row) => row.course.id)).toEqual(['failed', 'pending', 'non-gpa']);
 
     for (const [code, grade] of [['IS1201', 'E'], ['IS1203', 'A']]) {
@@ -88,6 +92,7 @@ describe('Student dashboard', () => {
     expect(saveSemesterGrades).toHaveBeenCalledExactlyOnceWith(2, { failed: 'E', 'non-gpa': 'A' });
     expect(dashboard.semesterGpa()).toBe(0);
     expect(dashboard.cumulativeGpa()).toBe(2.67);
+    expect(dashboard.degreeClass()).toEqual({ label: 'Pass', finalGpa: null });
     expect(dashboard.completed()).toBe(2);
     expect(dashboard.pending().map((row) => row.course.id)).toEqual(['pending']);
 
@@ -97,5 +102,57 @@ describe('Student dashboard', () => {
     expect(returning.cumulativeGpa()).toBe(2.67);
     expect(returning.pending()).toEqual([]);
     expect(returning.semesterStatus()).toBe('Upcoming');
+  });
+
+  it('uses the weighted final GPA once all semesters and elective requirements are complete', async () => {
+    const profile = { id: 'student', departmentId: 'is', curriculumVersionId: 'official', currentSemester: 8 };
+    const courses: Course[] = Array.from({ length: 8 }, (_, index) => ({
+      id: String(index + 1), code: `IS${index + 1}`, title: `Module ${index + 1}`,
+      credits: index < 4 ? 5 : 1, semester: (index + 1) as Course['semester'], year: Math.floor(index / 2) + 1,
+      category: 'Core', prerequisites: [], hasPractical: false, gpaEligible: true, isElective: false,
+    }));
+    courses.push({ ...courses[7], id: 'elective', code: 'IS8000', title: 'Elective', isElective: true });
+    const results: CourseResult[] = courses.map((course) => ({
+      id: course.id, studentId: profile.id, courseId: course.id, courseCode: course.code, courseTitle: course.title,
+      credits: course.credits, semester: course.semester, academicYear: 2026, marks: null,
+      letterGrade: course.semester <= 4 ? 'A' : 'B', gradePoint: course.semester <= 4 ? 4 : 3,
+      countsTowardGpa: true, isPredicted: false,
+    }));
+    const selected = new Set<string>();
+    TestBed.configureTestingModule({
+      providers: [
+        provideRouter([{ path: 'dashboard', component: DashboardComponent }]),
+        {
+          provide: ElectiveService,
+          useValue: { getRequirements: async () => [{ semester: 8, required_credits: 1 }] },
+        },
+        {
+          provide: ProfileService,
+          useValue: {
+            getMyProfile: async () => profile,
+            getDepartments: async () => [{ id: 'is', code: 'IS', name: 'Information Systems' }],
+          },
+        },
+        {
+          provide: StudentRecordsService,
+          useValue: {
+            getProgrammeRecords: async () => ({
+              courses, results, electiveSelections: new Map([[2026, selected]]), academicYear: 2026,
+            }),
+          },
+        },
+      ],
+    });
+    const harness = await RouterTestingHarness.create();
+    const dashboard = await harness.navigateByUrl('/dashboard', DashboardComponent);
+    await vi.waitFor(() => expect(dashboard.loading()).toBe(false));
+    expect(dashboard.degreeClass()).toEqual({ label: 'First Class', finalGpa: null });
+
+    selected.add('elective');
+    await dashboard.load();
+    expect(dashboard.cumulativeGpa()).toBe(3.8);
+    expect(dashboard.degreeClass()).toEqual({ label: 'Second Class Upper', finalGpa: 3.4 });
+    harness.detectChanges();
+    expect(harness.routeNativeElement?.textContent).toContain('Final GPA 3.40');
   });
 });

@@ -7,6 +7,7 @@ import { isSupabaseConfigured } from '../../core/supabase/supabase.client';
 import { ProfileService } from '../../services/profile.service';
 import { StudentRecordsService } from '../../services/student-records.service';
 import { GpaCalculationService } from '../../services/gpa-calculation.service';
+import { ElectiveService } from '../../services/elective.service';
 import { OFFICIAL_GRADE_SCALE } from '../../services/gpa';
 import { isRegisteredModule, latestProgrammeResults, programmeCurrentSemester, programmeGpaModule, savedGrade } from '../../services/programme-progress';
 
@@ -22,9 +23,11 @@ export class DashboardComponent {
   private readonly profiles = inject(ProfileService);
   private readonly studentRecords = inject(StudentRecordsService);
   private readonly gpa = inject(GpaCalculationService);
+  private readonly electives = inject(ElectiveService);
   private readonly query = toSignal(inject(ActivatedRoute).queryParamMap);
   private readonly profile = signal<Profile | null>(null);
   private readonly records = signal<ProgrammeRecords | null>(null);
+  private readonly electiveRequirements = signal<Awaited<ReturnType<ElectiveService['getRequirements']>> | null>(null);
   private readonly edits = signal(new Map<string, string | null>());
   readonly connected = isSupabaseConfigured;
   readonly programme = signal('');
@@ -60,6 +63,34 @@ export class DashboardComponent {
   readonly semesterGpa = computed(() => this.gpa.semesterGpa(this.rows().map((row) => row.module)));
   readonly cumulativeGpa = computed(() => this.gpa.semesterGpa(this.programmeRows().map((row) => row.module)));
   readonly provisional = computed(() => this.programmeRows().some((row) => row.registered && row.grade === null));
+  private readonly finalGpa = computed(() => {
+    const rows = this.programmeRows();
+    const requirements = this.electiveRequirements();
+    if (!requirements || this.provisional() || this.semesters.some((semester) =>
+      !rows.some((row) => row.registered && row.course.semester === semester),
+    )) return null;
+
+    const selectedCredits = new Map<number, number>();
+    for (const { course, registered } of rows) {
+      if (registered && course.isElective) {
+        const credits = selectedCredits.get(course.semester) ?? 0;
+        selectedCredits.set(course.semester, credits + (course.credits ?? 0));
+      }
+    }
+    if (requirements.some(({ semester, required_credits }) =>
+      (selectedCredits.get(semester) ?? 0) < required_credits,
+    )) return null;
+
+    const yearGpas = [1, 2, 3, 4].map((year) => this.gpa.semesterGpa(
+      rows.filter((row) => Math.ceil(row.course.semester / 2) === year).map((row) => row.module),
+    ));
+    return this.gpa.officialFgpa(yearGpas);
+  });
+  readonly degreeClass = computed(() => {
+    const finalGpa = this.finalGpa();
+    const gpa = finalGpa ?? this.cumulativeGpa();
+    return gpa === null ? null : { label: this.gpa.classify(gpa), finalGpa };
+  });
   readonly semesterStatus = computed(() => {
     if (!this.rows().some((row) => row.registered)) return 'No registered modules';
     if (this.future()) return 'Upcoming';
@@ -78,13 +109,15 @@ export class DashboardComponent {
     try {
       const profile = await this.profiles.getMyProfile();
       if (!profile?.departmentId || !profile.curriculumVersionId) throw new Error('Your degree programme could not be loaded.');
-      const [departments, records] = await Promise.all([
+      const [departments, records, requirements] = await Promise.all([
         this.profiles.getDepartments(),
         this.studentRecords.getProgrammeRecords(profile),
+        this.electives.getRequirements(profile.departmentId).catch(() => null),
       ]);
       const department = departments.find((item) => item.id === profile.departmentId);
       this.programme.set(department ? `${department.name} (${department.code})` : 'Degree programme');
       this.profile.set(profile);
+      this.electiveRequirements.set(requirements);
       this.records.set(records);
     } catch (error) {
       this.error.set(error instanceof Error ? error.message : 'Could not load your grades. Please try again.');

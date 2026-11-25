@@ -26,7 +26,7 @@
         }
       </nav>
 
-      <div class="grid grid-cols-2 gap-3 sm:grid-cols-4">
+      <div class="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
         <div class="gpa-panel p-4">
           <p class="gpa-muted text-sm">Semester {{ semesterLabel(semester()) }} GPA</p>
           <p class="mt-2 text-2xl font-bold tabular-nums">{{ formatGpa(semesterGpa()) }}</p>
@@ -36,6 +36,19 @@
           <p class="gpa-muted text-sm">Cumulative GPA</p>
           <p class="gpa-accent mt-2 text-2xl font-bold tabular-nums">{{ formatGpa(cumulativeGpa()) }}</p>
           @if (cumulativeGpa() !== null && provisional()) { <p class="gpa-pending mt-1 text-xs">Provisional</p> }
+        </div>
+        <div class="gpa-panel col-span-2 p-4 sm:col-span-1">
+          <p class="gpa-muted text-sm">Degree class</p>
+          @if (degreeClass(); as classification) {
+            <p class="gpa-accent mt-2 text-lg font-bold">{{ classification.label }}</p>
+            @if (classification.finalGpa === null) {
+              <p class="gpa-pending mt-1 text-xs">Provisional · based on current CGPA</p>
+            } @else {
+              <p class="gpa-muted mt-1 text-xs">Final GPA {{ formatGpa(classification.finalGpa) }}</p>
+            }
+          } @else {
+            <p class="mt-2 text-2xl font-bold">—</p>
+          }
         </div>
         <div class="gpa-panel p-4">
           <p class="gpa-muted text-sm">Completed modules</p>
