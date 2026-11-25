@@ -1,0 +1,16 @@
+-- 0004_courses.sql
+-- PENDING SPEC: import every IS / SE / DS module from the official curriculum.
+-- DO NOT invent modules. Preserve official codes (including hyphens).
+-- Store missing credit values as NULL (never 0).
+-- Set gpa_eligible = false ONLY for modules the regulations mark Non-GPA.
+-- Set is_elective = true for elective slots (does NOT by itself exclude GPA).
+--
+-- Template (one row per module):
+--
+-- insert into public.courses
+--   (curriculum_version_id, department_id, code, name, semester, credits, category, gpa_eligible, is_elective)
+-- values
+--   ((select id from public.curriculum_versions where department_id = (select id from public.departments where code='IS') and is_active limit 1),
+--    (select id from public.departments where code='IS'),
+--    'OFFICIAL-CODE', 'Official Name', 1, 3, 'core', true, false)
+-- on conflict (curriculum_version_id, code) do nothing;

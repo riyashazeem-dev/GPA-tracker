@@ -1,0 +1,640 @@
+{
+  "department": "DS",
+  "degree_name": "Data Science",
+  "curriculum_source": "User-provided official curriculum text in ChatGPT conversation",
+  "semester_count": 8,
+  "semesters": [
+    {
+      "semester": 1,
+      "courses": [
+        {
+          "course_code": "DS1101",
+          "course_name": "Introduction to Data Science",
+          "credits": 1,
+          "category": "Compulsory",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS1102",
+          "course_name": "Programming Fundamentals",
+          "credits": 2,
+          "category": "Compulsory",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS1103",
+          "course_name": "Calculus",
+          "credits": 2,
+          "category": "Compulsory",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS1104",
+          "course_name": "Introduction to Statistics",
+          "credits": 2,
+          "category": "Compulsory",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS1105",
+          "course_name": "Database Management Systems",
+          "credits": 2,
+          "category": "Compulsory",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS1106",
+          "course_name": "Computer System Organization",
+          "credits": 2,
+          "category": "Compulsory",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS1107",
+          "course_name": "Data and Society",
+          "credits": 1,
+          "category": "Compulsory",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS1108",
+          "course_name": "Web Programming I",
+          "credits": 2,
+          "category": "Compulsory",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS1109",
+          "course_name": "Communication Skills I",
+          "credits": null,
+          "category": "Compulsory (Non-GPA)",
+          "gpa_eligible": false
+        },
+        {
+          "course_code": "DS1110",
+          "course_name": "Academic Integrity",
+          "credits": null,
+          "category": "Compulsory (Non-GPA)",
+          "gpa_eligible": false
+        },
+        {
+          "course_code": "DS-EGP-1101",
+          "course_name": "General English I",
+          "credits": null,
+          "category": "Compulsory (Non-GPA)",
+          "gpa_eligible": false
+        }
+      ],
+      "official_total_credits": 14,
+      "official_core_credits": null,
+      "official_elective_credits": null,
+      "required_elective_credits": null
+    },
+    {
+      "semester": 2,
+      "courses": [
+        {
+          "course_code": "DS2101",
+          "course_name": "Operating Systems",
+          "credits": 2,
+          "category": "Compulsory",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS2102",
+          "course_name": "Data Structures",
+          "credits": 2,
+          "category": "Compulsory",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS2103",
+          "course_name": "Linear Algebra",
+          "credits": 2,
+          "category": "Compulsory",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS2104",
+          "course_name": "Object Oriented Programing",
+          "credits": 2,
+          "category": "Compulsory",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS2105",
+          "course_name": "Capstone Project in Data Science I",
+          "credits": 2,
+          "category": "Compulsory",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS2106",
+          "course_name": "Analysis of Algorithms",
+          "credits": 2,
+          "category": "Compulsory",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS2107",
+          "course_name": "System Analysis and Design",
+          "credits": 2,
+          "category": "Compulsory",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS2108",
+          "course_name": "Data Pre-Processing",
+          "credits": 1,
+          "category": "Compulsory",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS2109",
+          "course_name": "Communication Skills II",
+          "credits": null,
+          "category": "Compulsory (Non-GPA)",
+          "gpa_eligible": false
+        },
+        {
+          "course_code": "DS-EGP-1201",
+          "course_name": "General English II",
+          "credits": null,
+          "category": "Compulsory (Non-GPA)",
+          "gpa_eligible": false
+        }
+      ],
+      "official_total_credits": 15,
+      "official_core_credits": null,
+      "official_elective_credits": null,
+      "required_elective_credits": null
+    },
+    {
+      "semester": 3,
+      "courses": [
+        {
+          "course_code": "DS3101",
+          "course_name": "Probability Theory",
+          "credits": 2,
+          "category": "Compulsory",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS3102",
+          "course_name": "Regression Analysis",
+          "credits": 2,
+          "category": "Compulsory",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS3103",
+          "course_name": "Multivariate Calculus",
+          "credits": 2,
+          "category": "Compulsory",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS3104",
+          "course_name": "Real World Analytics",
+          "credits": 1,
+          "category": "Compulsory",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS3105",
+          "course_name": "Computer Networking",
+          "credits": 2,
+          "category": "Compulsory",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS3106",
+          "course_name": "Data Warehousing",
+          "credits": 2,
+          "category": "Compulsory",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS3107",
+          "course_name": "Web Programming II",
+          "credits": 2,
+          "category": "Compulsory",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS-EAP-1201",
+          "course_name": "Academic English I",
+          "credits": null,
+          "category": "Compulsory (Non-GPA)",
+          "gpa_eligible": false
+        }
+      ],
+      "official_total_credits": 13,
+      "official_core_credits": null,
+      "official_elective_credits": null,
+      "required_elective_credits": null
+    },
+    {
+      "semester": 4,
+      "courses": [
+        {
+          "course_code": "DS4101",
+          "course_name": "Advanced Database Management Systems",
+          "credits": 2,
+          "category": "Compulsory",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS4102",
+          "course_name": "Scientific Writing & Documentation",
+          "credits": 1,
+          "category": "Compulsory",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS4103",
+          "course_name": "Software Engineering",
+          "credits": 2,
+          "category": "Compulsory",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS4104",
+          "course_name": "Data Visualization",
+          "credits": 2,
+          "category": "Compulsory",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS4105",
+          "course_name": "Capstone Project in Data Science II",
+          "credits": 2,
+          "category": "Compulsory",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS4106",
+          "course_name": "Applied Data Mining",
+          "credits": 2,
+          "category": "Compulsory",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS4107",
+          "course_name": "Social and Professional Issues in Computing",
+          "credits": 2,
+          "category": "Compulsory",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS4108",
+          "course_name": "Business Intelligence",
+          "credits": 2,
+          "category": "Compulsory",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS4109",
+          "course_name": "Discrete Mathematics",
+          "credits": 2,
+          "category": "Compulsory",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS4110",
+          "course_name": "Artificial Intelligence",
+          "credits": 2,
+          "category": "Compulsory",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS-EAP-2201",
+          "course_name": "Academic English II",
+          "credits": null,
+          "category": "Compulsory (Non-GPA)",
+          "gpa_eligible": false
+        }
+      ],
+      "official_total_credits": 19,
+      "official_core_credits": null,
+      "official_elective_credits": null,
+      "required_elective_credits": null
+    },
+    {
+      "semester": 5,
+      "courses": [
+        {
+          "course_code": "DS5101",
+          "course_name": "Semantic Web",
+          "credits": 2,
+          "category": "Compulsory",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS5102",
+          "course_name": "Time Series Analysis and Forecasting",
+          "credits": 2,
+          "category": "Compulsory",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS5103",
+          "course_name": "Information Security",
+          "credits": 2,
+          "category": "Compulsory",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS5104",
+          "course_name": "Machine Learning",
+          "credits": 2,
+          "category": "Compulsory",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS5105",
+          "course_name": "Linear Programming",
+          "credits": 2,
+          "category": "Compulsory",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS5106",
+          "course_name": "Graph Theory",
+          "credits": 2,
+          "category": "Compulsory",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS-EBP-3101",
+          "course_name": "Business English",
+          "credits": null,
+          "category": "Compulsory (Non-GPA)",
+          "gpa_eligible": false
+        },
+        {
+          "course_code": "DS5107",
+          "course_name": "Image Processing",
+          "credits": 2,
+          "category": "Elective",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS5108",
+          "course_name": "Mobile Computing",
+          "credits": 2,
+          "category": "Elective",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS5109",
+          "course_name": "Data Science for Bioinformatics",
+          "credits": 2,
+          "category": "Elective",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS5110",
+          "course_name": "Human Resource Management",
+          "credits": 2,
+          "category": "Elective",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS5111",
+          "course_name": "Parallel and Distributed Computing",
+          "credits": 2,
+          "category": "Elective",
+          "gpa_eligible": true
+        }
+      ],
+      "official_total_credits": 16,
+      "official_core_credits": 12,
+      "official_elective_credits": 4,
+      "required_elective_credits": 4
+    },
+    {
+      "semester": 6,
+      "courses": [
+        {
+          "course_code": "DS6101",
+          "course_name": "Introduction to Deep Learning",
+          "credits": 1,
+          "category": "Compulsory",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS6102",
+          "course_name": "Bayesian Learning and Graphical Models",
+          "credits": 2,
+          "category": "Compulsory",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS6103",
+          "course_name": "Mathematical Optimization",
+          "credits": 2,
+          "category": "Compulsory",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS6104",
+          "course_name": "Industrial Training",
+          "credits": 6,
+          "category": "Compulsory",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS6105",
+          "course_name": "Web Services",
+          "credits": 2,
+          "category": "Elective",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS6106",
+          "course_name": "Cloud Computing",
+          "credits": 2,
+          "category": "Elective",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS6107",
+          "course_name": "Business Process Management",
+          "credits": 2,
+          "category": "Elective",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS6108",
+          "course_name": "Software Quality Assurance",
+          "credits": 2,
+          "category": "Elective",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS6109",
+          "course_name": "Fraud and Anomaly Detection",
+          "credits": 2,
+          "category": "Elective",
+          "gpa_eligible": true
+        }
+      ],
+      "official_total_credits": 13,
+      "official_core_credits": 11,
+      "official_elective_credits": 2,
+      "required_elective_credits": 2
+    },
+    {
+      "semester": 7,
+      "courses": [
+        {
+          "course_code": "DS7101",
+          "course_name": "Research Method",
+          "credits": 2,
+          "category": "Compulsory",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS7102",
+          "course_name": "Advanced Deep Learning",
+          "credits": 2,
+          "category": "Compulsory",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS7103",
+          "course_name": "Emerging Trends in Data Science",
+          "credits": 1,
+          "category": "Compulsory",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS7104",
+          "course_name": "Numerical Methods",
+          "credits": 2,
+          "category": "Compulsory",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS7105",
+          "course_name": "Natural Language Processing",
+          "credits": 2,
+          "category": "Compulsory",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS7106",
+          "course_name": "Entrepreneurship and Innovation",
+          "credits": 2,
+          "category": "Elective",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS7107",
+          "course_name": "Internet of Things",
+          "credits": 2,
+          "category": "Elective",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS7108",
+          "course_name": "Design Patterns and Anti-patterns",
+          "credits": 2,
+          "category": "Elective",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS7109",
+          "course_name": "Ontology Engineering",
+          "credits": 2,
+          "category": "Elective",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS7110",
+          "course_name": "Blockchain and Cryptocurrency",
+          "credits": 2,
+          "category": "Elective",
+          "gpa_eligible": true
+        }
+      ],
+      "official_total_credits": 13,
+      "official_core_credits": 9,
+      "official_elective_credits": 4,
+      "required_elective_credits": 4
+    },
+    {
+      "semester": 8,
+      "courses": [
+        {
+          "course_code": "DS8101",
+          "course_name": "Research Project in Data Science",
+          "credits": 8,
+          "category": "Compulsory",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS8102",
+          "course_name": "Information Retrieval and Web Analytics",
+          "credits": 2,
+          "category": "Compulsory",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS8103",
+          "course_name": "Reinforcement Learning",
+          "credits": 2,
+          "category": "Compulsory",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS8104",
+          "course_name": "Computational Intelligence",
+          "credits": 2,
+          "category": "Compulsory",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS8105",
+          "course_name": "Business Analytics and Applications",
+          "credits": 1,
+          "category": "Compulsory",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS8106",
+          "course_name": "Geographical Information Systems",
+          "credits": 2,
+          "category": "Elective",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS8107",
+          "course_name": "Digital Forensics",
+          "credits": 2,
+          "category": "Elective",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS8108",
+          "course_name": "Business Process Simulation",
+          "credits": 2,
+          "category": "Elective",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "DS8109",
+          "course_name": "Robotics",
+          "credits": 2,
+          "category": "Elective",
+          "gpa_eligible": true
+        }
+      ],
+      "official_total_credits": 17,
+      "official_core_credits": 15,
+      "official_elective_credits": 2,
+      "required_elective_credits": 2
+    }
+  ]
+}

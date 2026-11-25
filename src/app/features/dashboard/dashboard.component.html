@@ -1,0 +1,105 @@
+@if (!connected) {
+  <section class="gpa-panel p-6">
+    <h1 class="text-2xl font-bold">GPA Tracker</h1>
+    <p class="gpa-muted my-4">Connect Supabase to sign in and save grades, or use the local calculator.</p>
+    <a class="gpa-nav-link" routerLink="/gpa">Open local calculator</a>
+  </section>
+} @else {
+  <section aria-labelledby="dashboard-title">
+    <h1 id="dashboard-title" class="text-3xl font-bold tracking-tight sm:text-4xl">Student dashboard</h1>
+    @if (programme()) { <p class="gpa-accent mt-2 text-sm font-medium">{{ programme() }}</p> }
+
+    @if (loading()) {
+      <p role="status" class="gpa-muted mt-6">Loading your modules and grades…</p>
+    } @else if (!programme()) {
+      <p class="gpa-error mt-6" role="alert">{{ error() }}</p>
+      <button type="button" class="gpa-nav-link mt-4" (click)="load()">Try again</button>
+    } @else {
+      <nav aria-label="Semesters" class="my-6 grid grid-cols-2 gap-2 sm:grid-cols-4 lg:grid-cols-8">
+        @for (number of semesters; track number) {
+          @if (saving()) {
+            <button type="button" class="gpa-nav-link" disabled>Semester {{ semesterLabel(number) }}</button>
+          } @else {
+            <a class="gpa-nav-link" routerLink="/dashboard" [queryParams]="{ semester: number }"
+              [attr.aria-current]="number === semester() ? 'page' : null">Semester {{ semesterLabel(number) }}</a>
+          }
+        }
+      </nav>
+
+      <div class="grid grid-cols-2 gap-3 sm:grid-cols-4">
+        <div class="gpa-panel p-4">
+          <p class="gpa-muted text-sm">Semester {{ semesterLabel(semester()) }} GPA</p>
+          <p class="mt-2 text-2xl font-bold tabular-nums">{{ formatGpa(semesterGpa()) }}</p>
+          @if (semesterGpa() !== null && pending().length) { <p class="gpa-pending mt-1 text-xs">Provisional</p> }
+        </div>
+        <div class="gpa-panel p-4">
+          <p class="gpa-muted text-sm">Cumulative GPA</p>
+          <p class="gpa-accent mt-2 text-2xl font-bold tabular-nums">{{ formatGpa(cumulativeGpa()) }}</p>
+          @if (cumulativeGpa() !== null && provisional()) { <p class="gpa-pending mt-1 text-xs">Provisional</p> }
+        </div>
+        <div class="gpa-panel p-4">
+          <p class="gpa-muted text-sm">Completed modules</p>
+          <p class="mt-2 text-2xl font-bold tabular-nums">{{ completed() }}</p>
+        </div>
+        <div class="gpa-panel p-4">
+          <p class="gpa-muted text-sm">Pending results</p>
+          <p class="gpa-pending mt-2 text-2xl font-bold tabular-nums">{{ future() ? '—' : pending().length }}</p>
+        </div>
+      </div>
+
+      <section class="gpa-panel mt-6" aria-labelledby="modules-title">
+        <div class="gpa-divider flex flex-wrap items-center justify-between gap-2 border-b p-4 sm:px-5">
+          <h2 id="modules-title" class="text-lg font-bold">Semester {{ semesterLabel(semester()) }} modules</h2>
+          <span class="text-sm" [class.gpa-pending]="pending().length > 0" [class.gpa-muted]="pending().length === 0">{{ semesterStatus() }}</span>
+        </div>
+        @if (!rows().length) {
+          <p class="gpa-muted p-5">No official modules are available for this semester.</p>
+        }
+        @for (row of rows(); track row.course.id) {
+          <div class="gpa-divider grid gap-3 border-b px-4 py-3 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center sm:px-5">
+            <div>
+              <h3 class="font-medium">{{ row.course.title }}</h3>
+              <p class="gpa-muted mt-1 text-xs">{{ row.course.code }} · {{ row.course.credits ?? '—' }} credits · {{ row.course.gpaEligible ? 'GPA' : 'Non-GPA' }}@if (row.course.isElective) { · Elective }</p>
+            </div>
+            <div class="flex items-center justify-between gap-3 sm:min-w-56">
+              @if (!row.registered) {
+                <a class="gpa-muted text-sm underline" routerLink="/electives">Register elective</a>
+              } @else if (row.grade === null) {
+                <span class="text-sm" [class.gpa-pending]="!future()" [class.gpa-muted]="future()">{{ future() ? 'Upcoming' : 'Pending' }}</span>
+              } @else {
+                <span class="gpa-accent text-sm">Graded</span>
+              }
+              <select class="gpa-control min-w-28 text-sm" [disabled]="saving()"
+                [attr.aria-label]="'Grade for ' + row.course.code"
+                [ngModel]="selectedGrade(row.course.id, row.grade)"
+                (ngModelChange)="editGrade(row.course.id, $event, row.grade)">
+                <option value="">Pending</option>
+                @for (band of gradeScale; track band.grade) { <option [value]="band.grade">{{ band.grade }}</option> }
+              </select>
+            </div>
+          </div>
+        }
+        @if (rows().length) {
+          <div class="p-4 sm:px-5">
+            <button type="button" class="gpa-button w-full sm:w-auto" [disabled]="saving()" (click)="save()">
+              {{ saving() ? 'Saving grades…' : 'Calculate & Save GPA' }}
+            </button>
+            @if (hasSemesterEdits()) { <span class="gpa-pending mt-2 block text-sm sm:ml-3 sm:inline">Unsaved changes</span> }
+            @if (error()) { <p class="gpa-error mt-3 text-sm" role="alert">{{ error() }}</p> }
+            @if (success()) { <p class="gpa-accent mt-3 text-sm" role="status">{{ success() }}</p> }
+          </div>
+        }
+      </section>
+
+      @if (pending().length) {
+        <section class="gpa-panel mt-5 p-4 sm:px-5" aria-labelledby="pending-title">
+          <h2 id="pending-title" class="font-bold">Pending results</h2>
+          <ul class="gpa-muted mt-2 grid list-disc gap-1 pl-5 text-sm sm:grid-cols-2">
+            @for (row of pending(); track row.course.id) { <li>{{ row.course.title }}</li> }
+          </ul>
+        </section>
+      }
+      <a class="gpa-muted mt-6 inline-block text-sm underline" routerLink="/gpa/history">Result history and repeats</a>
+    }
+  </section>
+}

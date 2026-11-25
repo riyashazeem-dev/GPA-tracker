@@ -1,0 +1,13 @@
+{
+  "_comment": "Official totals from the supplied curriculum JSON. The validator reports mismatches (e.g. DS elective surplus) without modifying source data.",
+  "departments": {
+    "IS": { "courseCount": 85, "totalCredits": 138, "semesterCredits": {} },
+    "SE": { "courseCount": 75, "totalCredits": 157, "semesterCredits": {} },
+    "DS": { "courseCount": 80, "totalCredits": 120, "semesterCredits": {} }
+  },
+  "electiveRequirements": {
+    "IS": { "5": 10, "7": 9, "8": 9 },
+    "SE": { "5": 10, "6": 10, "8": 8 },
+    "DS": { "5": 4, "6": 2, "7": 4, "8": 2 }
+  }
+}

@@ -1,0 +1,18 @@
+-- 0005_grading.sql
+-- PENDING SPEC: grading scale + grade points from the official examination
+-- regulations (see GPA_RULES.md). Do not invent grade points.
+--
+-- Template:
+--
+-- insert into public.grading_scales (name) values ('<OFFICIAL SCALE NAME>')
+-- on conflict do nothing;
+--
+-- insert into public.grade_points (scale_id, label, grade_point, min_percentage, counts_toward_gpa)
+-- select s.id, v.label, v.gp, v.min_pct, v.counts
+-- from public.grading_scales s
+-- cross join (values
+--   ('A', 4.0, 80, true),
+--   ('B', 3.0, 70, true)
+--   -- ... full official set
+-- ) as v(label, gp, min_pct, counts)
+-- on conflict (scale_id, label) do nothing;

@@ -1,0 +1,605 @@
+{
+  "department": "SE",
+  "degree_name": "Software Engineering",
+  "curriculum_source": "User-provided official curriculum text in ChatGPT conversation",
+  "semester_count": 8,
+  "semesters": [
+    {
+      "semester": 1,
+      "courses": [
+        {
+          "course_code": "SE1101",
+          "course_name": "Computer Organization",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE1102",
+          "course_name": "Programming Fundamentals",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE1103",
+          "course_name": "Requirements Fundamentals",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE1104",
+          "course_name": "Software Process Concepts",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE1105",
+          "course_name": "Social and Professional Issues",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE1106",
+          "course_name": "Fundamentals of Mathematics",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE1107",
+          "course_name": "Fundamentals of Statistics",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE1108",
+          "course_name": "Communication Skills I",
+          "credits": 1,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE1109",
+          "course_name": "Academic Integrity",
+          "credits": 1,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE-EGP-1101",
+          "course_name": "General English I",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        }
+      ],
+      "official_total_credits": 18,
+      "official_core_credits": null,
+      "official_elective_credits": null,
+      "required_elective_credits": null
+    },
+    {
+      "semester": 2,
+      "courses": [
+        {
+          "course_code": "SE2101",
+          "course_name": "Algorithms, Data structures, and Complexity",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE2102",
+          "course_name": "Database Management Systems",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE2103",
+          "course_name": "Operating Systems Basics",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE2104",
+          "course_name": "Object Oriented Programming",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE2105",
+          "course_name": "Requirement Specification and Documentation",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE2106",
+          "course_name": "Software Process Implementation",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE2107",
+          "course_name": "Analysis Fundamentals",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE2108",
+          "course_name": "Advanced Mathematics",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE2109",
+          "course_name": "Communication Skills II",
+          "credits": 1,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE-EGP-1201",
+          "course_name": "General English II",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        }
+      ],
+      "official_total_credits": 19,
+      "official_core_credits": null,
+      "official_elective_credits": null,
+      "required_elective_credits": null
+    },
+    {
+      "semester": 3,
+      "courses": [
+        {
+          "course_code": "SE3101",
+          "course_name": "Network Protocols",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE3102",
+          "course_name": "Formal Methods",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE3103",
+          "course_name": "Object Oriented Analysis and Design",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE3104",
+          "course_name": "Requirements Validation",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE3105",
+          "course_name": "Software Design Concepts",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE3106",
+          "course_name": "Web Systems and Technologies",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE3107",
+          "course_name": "Software Engineering Foundations",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE-EAP-2101",
+          "course_name": "Academic English I",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        }
+      ],
+      "official_total_credits": 16,
+      "official_core_credits": null,
+      "official_elective_credits": null,
+      "required_elective_credits": null
+    },
+    {
+      "semester": 4,
+      "courses": [
+        {
+          "course_code": "SE4101",
+          "course_name": "Security Fundamentals",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE4102",
+          "course_name": "Software Verification and Validation",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE4103",
+          "course_name": "Software Configuration Management",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE4104",
+          "course_name": "Software Project Management",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE4105",
+          "course_name": "Human Computer Interaction Design",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE4106",
+          "course_name": "Projects in Web Systems and Technologies",
+          "credits": 3,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE4107",
+          "course_name": "Industrial Inspection",
+          "credits": 1,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE4108",
+          "course_name": "Risk Management",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE4109",
+          "course_name": "Communication Skills",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE4110",
+          "course_name": "Management Information Systems",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE-EAP-2201",
+          "course_name": "Academic English II",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        }
+      ],
+      "official_total_credits": 22,
+      "official_core_credits": null,
+      "official_elective_credits": null,
+      "required_elective_credits": null
+    },
+    {
+      "semester": 5,
+      "courses": [
+        {
+          "course_code": "SE5101",
+          "course_name": "Computer and Network Security",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE5102",
+          "course_name": "Software Testing",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE5103",
+          "course_name": "Product Assurance",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE5104",
+          "course_name": "Mini Project",
+          "credits": 3,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE5105",
+          "course_name": "Evolution processes and activities",
+          "credits": 1,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE5106",
+          "course_name": "IT Auditing",
+          "credits": 2,
+          "category": "Elective",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE5107",
+          "course_name": "Human Resource Management",
+          "credits": 2,
+          "category": "Elective",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE5108",
+          "course_name": "Geographic Information Systems",
+          "credits": 2,
+          "category": "Elective",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE5109",
+          "course_name": "Logistic System and Transportation Management",
+          "credits": 2,
+          "category": "Elective",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE5110",
+          "course_name": "Business Intelligence",
+          "credits": 2,
+          "category": "Elective",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE-EBP-3101",
+          "course_name": "Business English",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        }
+      ],
+      "official_total_credits": 22,
+      "official_core_credits": 12,
+      "official_elective_credits": 10,
+      "required_elective_credits": 10
+    },
+    {
+      "semester": 6,
+      "courses": [
+        {
+          "course_code": "SE6101",
+          "course_name": "Community Project",
+          "credits": 3,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE6102",
+          "course_name": "Cloud Computing",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE6103",
+          "course_name": "Parallel and Distributed Systems",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE6104",
+          "course_name": "Advanced Database Management Systems",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE6105",
+          "course_name": "Software Architecture",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE6106",
+          "course_name": "Software Design Patterns",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE6107",
+          "course_name": "Software Design Evaluation",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE6108",
+          "course_name": "Current Topics in Software Engineering",
+          "credits": 1,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE6109",
+          "course_name": "Enterprise Modeling Ontologies",
+          "credits": 2,
+          "category": "Elective",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE6110",
+          "course_name": "Software Engineering Economics",
+          "credits": 2,
+          "category": "Elective",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE6111",
+          "course_name": "Social Computing",
+          "credits": 2,
+          "category": "Elective",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE6112",
+          "course_name": "Semantic Web",
+          "credits": 2,
+          "category": "Elective",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE6113",
+          "course_name": "Robotics",
+          "credits": 2,
+          "category": "Elective",
+          "gpa_eligible": true
+        }
+      ],
+      "official_total_credits": 26,
+      "official_core_credits": 16,
+      "official_elective_credits": 10,
+      "required_elective_credits": 10
+    },
+    {
+      "semester": 7,
+      "courses": [
+        {
+          "course_code": "SE7101",
+          "course_name": "Industrial Training",
+          "credits": 6,
+          "category": "Core",
+          "gpa_eligible": true
+        }
+      ],
+      "official_total_credits": 6,
+      "official_core_credits": null,
+      "official_elective_credits": null,
+      "required_elective_credits": null
+    },
+    {
+      "semester": 8,
+      "courses": [
+        {
+          "course_code": "SE8101",
+          "course_name": "Research Project",
+          "credits": 8,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE8102",
+          "course_name": "Research Methods",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE8103",
+          "course_name": "Service Oriented Architecture",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE8104",
+          "course_name": "Problem Analysis and Reporting",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE8105",
+          "course_name": "Machine Learning",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE8106",
+          "course_name": "Mobile Computing",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE8107",
+          "course_name": "Refactoring",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE8108",
+          "course_name": "Game Designing and Development",
+          "credits": 2,
+          "category": "Elective",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE8109",
+          "course_name": "Data Mining",
+          "credits": 2,
+          "category": "Elective",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE8110",
+          "course_name": "Big Data Analytics",
+          "credits": 2,
+          "category": "Elective",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "SE8111",
+          "course_name": "Artificial Intelligence",
+          "credits": 2,
+          "category": "Elective",
+          "gpa_eligible": true
+        }
+      ],
+      "official_total_credits": 28,
+      "official_core_credits": 20,
+      "official_elective_credits": 8,
+      "required_elective_credits": 8
+    }
+  ]
+}

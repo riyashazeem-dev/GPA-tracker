@@ -1,0 +1,675 @@
+{
+  "department": "IS",
+  "degree_name": "Information Systems",
+  "curriculum_source": "User-provided official curriculum text in ChatGPT conversation",
+  "semester_count": 8,
+  "semesters": [
+    {
+      "semester": 1,
+      "courses": [
+        {
+          "course_code": "IS1101",
+          "course_name": "Fundamentals of Information Systems",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS1102",
+          "course_name": "Structured Programming Techniques",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS1103",
+          "course_name": "Structured Programming Practicum",
+          "credits": 1,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS1104",
+          "course_name": "Theories of Information Systems",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS1105",
+          "course_name": "Computer System Organization",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS1106",
+          "course_name": "Foundations of Web Technologies",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS1107",
+          "course_name": "Personal Productivity with Information Technology",
+          "credits": 1,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS1108",
+          "course_name": "Fundamentals of Mathematics",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS1109",
+          "course_name": "Statistics & Probability Theory",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS1110",
+          "course_name": "Communication Skills I",
+          "credits": null,
+          "category": "Core",
+          "gpa_eligible": false
+        },
+        {
+          "course_code": "IS1111",
+          "course_name": "Academic Integrity",
+          "credits": null,
+          "category": "Core",
+          "gpa_eligible": false
+        },
+        {
+          "course_code": "IS-EGP-1101",
+          "course_name": "General English I",
+          "credits": null,
+          "category": "Core",
+          "gpa_eligible": false
+        }
+      ],
+      "official_total_credits": 16,
+      "official_core_credits": null,
+      "official_elective_credits": null,
+      "required_elective_credits": null
+    },
+    {
+      "semester": 2,
+      "courses": [
+        {
+          "course_code": "IS2101",
+          "course_name": "Object Oriented Programming",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS2102",
+          "course_name": "Object Oriented Programming Practicum",
+          "credits": 1,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS2103",
+          "course_name": "Emerging IS Technologies",
+          "credits": 1,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS2104",
+          "course_name": "Database Systems",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS2105",
+          "course_name": "Database Management Systems Practicum",
+          "credits": 1,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS2106",
+          "course_name": "System Analysis & Design",
+          "credits": 1,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS2107",
+          "course_name": "Social & Professional Issues",
+          "credits": 1,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS2108",
+          "course_name": "Human Computer Interaction",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS2109",
+          "course_name": "Information Assurance & Security",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS2110",
+          "course_name": "Software Project Initiation & Planning",
+          "credits": 1,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS2111",
+          "course_name": "Advanced Mathematics",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS2112",
+          "course_name": "Communication Skills II",
+          "credits": null,
+          "category": "Core",
+          "gpa_eligible": false
+        },
+        {
+          "course_code": "IS-EGP-1201",
+          "course_name": "General English II",
+          "credits": null,
+          "category": "Core",
+          "gpa_eligible": false
+        }
+      ],
+      "official_total_credits": 16,
+      "official_core_credits": null,
+      "official_elective_credits": null,
+      "required_elective_credits": null
+    },
+    {
+      "semester": 3,
+      "courses": [
+        {
+          "course_code": "IS3101",
+          "course_name": "Object Oriented Analysis & Design",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS3102",
+          "course_name": "Data Structures & Algorithms",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS3103",
+          "course_name": "IT Governance",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS3104",
+          "course_name": "Software Engineering",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS3105",
+          "course_name": "IS Risk Management",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS3106",
+          "course_name": "IS Sustainability",
+          "credits": 1,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS3107",
+          "course_name": "Management Information Systems",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS3108",
+          "course_name": "E-Business",
+          "credits": 1,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS3109",
+          "course_name": "Digital Innovation",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS-EAP-2101",
+          "course_name": "Academic English I",
+          "credits": null,
+          "category": "Core",
+          "gpa_eligible": false
+        }
+      ],
+      "official_total_credits": 16,
+      "official_core_credits": null,
+      "official_elective_credits": null,
+      "required_elective_credits": null
+    },
+    {
+      "semester": 4,
+      "courses": [
+        {
+          "course_code": "IS4101",
+          "course_name": "IT Auditing",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS4102",
+          "course_name": "Web Application Development",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS4103",
+          "course_name": "Operating Systems",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS4104",
+          "course_name": "System Administration and Maintenance",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS4105",
+          "course_name": "IT Procurement Management",
+          "credits": 1,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS4106",
+          "course_name": "Software Architecture",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS4107",
+          "course_name": "Professionalism & Ethics in Computing",
+          "credits": 1,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS4108",
+          "course_name": "IS Strategies",
+          "credits": 1,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS4109",
+          "course_name": "Agile Software Development",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS4110",
+          "course_name": "Capstone Project",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS-EAP-2201",
+          "course_name": "Academic English II",
+          "credits": null,
+          "category": "Core",
+          "gpa_eligible": false
+        }
+      ],
+      "official_total_credits": 17,
+      "official_core_credits": null,
+      "official_elective_credits": null,
+      "required_elective_credits": null
+    },
+    {
+      "semester": 5,
+      "courses": [
+        {
+          "course_code": "IS5101",
+          "course_name": "Entrepreneurship & Innovation",
+          "credits": 1,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS5102",
+          "course_name": "Enterprise Architecture",
+          "credits": 1,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS5103",
+          "course_name": "High Performance Computing",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS5104",
+          "course_name": "Software Process Management",
+          "credits": 1,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS5105",
+          "course_name": "Business Process Management",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS5106",
+          "course_name": "UI/UX Practicum",
+          "credits": 1,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS5107",
+          "course_name": "Project Management Practicum",
+          "credits": 1,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS5108",
+          "course_name": "Business Intelligence",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS5109",
+          "course_name": "IS Project for Community",
+          "credits": 1,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS5110",
+          "course_name": "Advanced Database Systems",
+          "credits": 2,
+          "category": "Elective",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS5111",
+          "course_name": "Data Communication & Networks",
+          "credits": 2,
+          "category": "Elective",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS5112",
+          "course_name": "Design Patterns & Anti-patterns",
+          "credits": 2,
+          "category": "Elective",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS5113",
+          "course_name": "Software Quality Assurance",
+          "credits": 2,
+          "category": "Elective",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS5114",
+          "course_name": "Data Mining & Analytics",
+          "credits": 2,
+          "category": "Elective",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS-EBP-3101",
+          "course_name": "Business English",
+          "credits": null,
+          "category": "Core",
+          "gpa_eligible": false
+        }
+      ],
+      "official_total_credits": 22,
+      "official_core_credits": 12,
+      "official_elective_credits": 10,
+      "required_elective_credits": 10
+    },
+    {
+      "semester": 6,
+      "courses": [
+        {
+          "course_code": "IS6101",
+          "course_name": "Industrial Training",
+          "credits": 6,
+          "category": "Core",
+          "gpa_eligible": true
+        }
+      ],
+      "official_total_credits": 6,
+      "official_core_credits": null,
+      "official_elective_credits": null,
+      "required_elective_credits": null
+    },
+    {
+      "semester": 7,
+      "courses": [
+        {
+          "course_code": "IS7101",
+          "course_name": "Research Methodologies",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS7102",
+          "course_name": "IT Law",
+          "credits": 1,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS7103",
+          "course_name": "Business Process Simulation",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS7104",
+          "course_name": "Enterprise Modelling Ontologies",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS7105",
+          "course_name": "Organizational Behavior & Management",
+          "credits": 1,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS7106",
+          "course_name": "Cloud Computing",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS7107",
+          "course_name": "Mobile Application Development",
+          "credits": 1,
+          "category": "Elective",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS7108",
+          "course_name": "Web Service Technologies",
+          "credits": 2,
+          "category": "Elective",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS7109",
+          "course_name": "Geographical Information Systems",
+          "credits": 2,
+          "category": "Elective",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS7110",
+          "course_name": "Statistical Distribution & Inferences",
+          "credits": 1,
+          "category": "Elective",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS7111",
+          "course_name": "Advanced Programming Practicum",
+          "credits": 1,
+          "category": "Elective",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS7112",
+          "course_name": "Machine Learning",
+          "credits": 2,
+          "category": "Elective",
+          "gpa_eligible": true
+        }
+      ],
+      "official_total_credits": 19,
+      "official_core_credits": 10,
+      "official_elective_credits": 9,
+      "required_elective_credits": 9
+    },
+    {
+      "semester": 8,
+      "courses": [
+        {
+          "course_code": "IS8101",
+          "course_name": "Research Project in IS",
+          "credits": 8,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS8102",
+          "course_name": "Business/IT Alignment",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS8103",
+          "course_name": "Human Resource Management",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS8104",
+          "course_name": "Scientific Communication",
+          "credits": 1,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS8105",
+          "course_name": "IS Economics",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS8106",
+          "course_name": "Computer System Security",
+          "credits": 2,
+          "category": "Core",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS8107",
+          "course_name": "Supply Chain Management",
+          "credits": 2,
+          "category": "Elective",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS8108",
+          "course_name": "Advanced Computer Networks",
+          "credits": 2,
+          "category": "Elective",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS8109",
+          "course_name": "Process Mining",
+          "credits": 2,
+          "category": "Elective",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS8110",
+          "course_name": "Digital Business Model",
+          "credits": 1,
+          "category": "Elective",
+          "gpa_eligible": true
+        },
+        {
+          "course_code": "IS8111",
+          "course_name": "Game Development",
+          "credits": 2,
+          "category": "Elective",
+          "gpa_eligible": true
+        }
+      ],
+      "official_total_credits": 26,
+      "official_core_credits": 17,
+      "official_elective_credits": 9,
+      "required_elective_credits": 9
+    }
+  ]
+}

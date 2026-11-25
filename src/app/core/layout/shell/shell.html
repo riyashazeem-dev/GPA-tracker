@@ -1,0 +1,21 @@
+<div class="gpa-shell min-h-screen">
+  <header class="gpa-divider border-b">
+    <div class="mx-auto flex max-w-6xl flex-wrap items-center gap-x-4 gap-y-3 px-4 py-4 sm:px-8">
+      <a routerLink="/dashboard" class="mr-auto text-lg font-bold tracking-tight">GPA <span class="gpa-accent">Tracker</span></a>
+      @if (supabaseConfigured) {
+        <button type="button" class="gpa-nav-link" (click)="signOut()" [disabled]="signingOut()">
+          {{ signingOut() ? 'Signing out…' : 'Sign out' }}
+        </button>
+      }
+      <nav aria-label="Main navigation" class="order-last flex w-full flex-wrap gap-2 sm:order-none sm:w-auto">
+        <a class="gpa-nav-link" routerLink="/dashboard" routerLinkActive="active" ariaCurrentWhenActive="page">Dashboard</a>
+        <a class="gpa-nav-link" routerLink="/target-planner" routerLinkActive="active" ariaCurrentWhenActive="page">Target GPA Planner</a>
+        <a class="gpa-nav-link" routerLink="/electives" routerLinkActive="active" ariaCurrentWhenActive="page">Electives</a>
+      </nav>
+    </div>
+  </header>
+  <main class="mx-auto max-w-6xl px-4 py-6 sm:px-8 sm:py-9">
+    @if (error()) { <p class="gpa-error mb-4 text-sm" role="alert">{{ error() }}</p> }
+    <router-outlet />
+  </main>
+</div>

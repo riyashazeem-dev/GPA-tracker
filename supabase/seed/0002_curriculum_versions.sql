@@ -1,0 +1,10 @@
+-- 0002_curriculum_versions.sql
+-- PENDING SPEC: one curriculum version per department.
+-- The official version label / effective date must come from the project
+-- specification. The template below is commented out to avoid inventing data.
+--
+-- insert into public.curriculum_versions (department_id, version, effective_from, is_active, total_credits)
+-- select d.id, '<OFFICIAL-VERSION>', '<YYYY-MM-DD>'::date, true, <OFFICIAL-TOTAL-CREDITS>
+-- from public.departments d
+-- where d.code in ('IS','SE','DS')
+-- on conflict (department_id, version) do nothing;

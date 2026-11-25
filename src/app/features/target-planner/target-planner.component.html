@@ -1,0 +1,68 @@
+<section aria-labelledby="planner-title">
+  <h1 id="planner-title" class="text-3xl font-bold tracking-tight sm:text-4xl">Target GPA Planner</h1>
+  <p class="gpa-muted mt-2 text-sm">Plan a semester using your saved grades and registered modules.</p>
+
+  @if (loading()) {
+    <p class="gpa-muted mt-6" role="status">Loading your grades…</p>
+  } @else if (ready()) {
+    @if (futureSemesters().length) {
+      <form class="gpa-panel mt-6 grid gap-4 p-4 sm:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_auto] sm:items-end sm:p-5"
+        (ngSubmit)="calculate()" novalidate>
+        <label class="grid gap-2 text-sm">
+          Desired cumulative GPA
+          <input type="number" class="gpa-control w-full" name="target" min="0" max="4" step="0.01"
+            placeholder="3.50" [ngModel]="target()" (ngModelChange)="changeTarget($event)">
+        </label>
+        <label class="grid gap-2 text-sm">
+          Upcoming semester
+          <select class="gpa-control w-full" name="semester" [ngModel]="semester()" (ngModelChange)="changeSemester($event)">
+            @for (value of futureSemesters(); track value) {
+              <option [ngValue]="value">Semester {{ value < 10 ? '0' + value : value }}</option>
+            }
+          </select>
+        </label>
+        <button class="gpa-button" type="submit">Calculate target</button>
+      </form>
+      @if (hasUnregisteredElectives()) {
+        <p class="gpa-muted mt-3 text-sm">The plan uses registered electives.
+          <a class="gpa-accent underline" routerLink="/electives">Manage registration</a>
+        </p>
+      }
+    } @else {
+      <p class="gpa-muted mt-6">There are no upcoming semesters in your programme.</p>
+    }
+  }
+
+  @if (error()) { <p class="gpa-error mt-4 text-sm" role="alert">{{ error() }}</p> }
+  @if (plan(); as result) {
+    <div class="gpa-panel mt-5 grid gap-4 p-4 sm:grid-cols-3 sm:p-5" role="status">
+      <div><p class="gpa-muted text-sm">Required semester GPA</p><p class="mt-2 text-2xl font-bold">{{ result.requiredSemesterGpa.toFixed(2) }}</p></div>
+      <div><p class="gpa-muted text-sm">Maximum achievable CGPA</p><p class="gpa-accent mt-2 text-2xl font-bold">{{ result.maximumCumulativeGpa.toFixed(2) }}</p></div>
+      <div><p class="gpa-muted text-sm">Upcoming GPA credits</p><p class="mt-2 text-2xl font-bold">{{ result.upcomingCredits }}</p></div>
+    </div>
+    @if (!result.achievable) {
+      <p class="gpa-error mt-4" role="alert">This target is out of reach in the selected semester, even with the maximum grade in every eligible module.</p>
+    } @else {
+      <h2 class="mt-6 text-lg font-bold">Suggested grade combinations</h2>
+      <div class="mt-3 grid gap-4 lg:grid-cols-3">
+        @for (option of result.combinations; track $index) {
+          <article class="gpa-panel p-4">
+            <h3 class="font-bold">Option {{ $index + 1 }}</h3>
+            <p class="gpa-accent mt-1 text-sm">Semester GPA {{ option.semesterGpa.toFixed(2) }} · CGPA {{ option.cumulativeGpa.toFixed(2) }}</p>
+            <div class="gpa-muted mt-2 flex flex-wrap gap-3 text-xs">
+              @for (band of option.gradeCounts; track band.grade) { <span>{{ band.count }} × {{ band.grade }}</span> }
+            </div>
+            <ul class="mt-3">
+              @for (assignment of option.grades; track assignment.module.id) {
+                <li class="gpa-divider flex justify-between gap-3 border-t py-2 text-sm">
+                  <span>{{ assignment.module.title }} <span class="gpa-muted block text-xs">{{ assignment.module.code }} · {{ assignment.module.credits }} cr</span></span>
+                  <span class="gpa-accent font-bold">{{ assignment.grade }}</span>
+                </li>
+              }
+            </ul>
+          </article>
+        }
+      </div>
+    }
+  }
+</section>

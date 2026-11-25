@@ -1,0 +1,131 @@
+{
+  "grading_scale": [
+    {
+      "grade": "A+",
+      "minimum_mark": 90,
+      "maximum_mark": 100,
+      "grade_point": 4.0
+    },
+    {
+      "grade": "A",
+      "minimum_mark": 80,
+      "maximum_mark": 89,
+      "grade_point": 4.0
+    },
+    {
+      "grade": "A-",
+      "minimum_mark": 75,
+      "maximum_mark": 79,
+      "grade_point": 3.7
+    },
+    {
+      "grade": "B+",
+      "minimum_mark": 70,
+      "maximum_mark": 74,
+      "grade_point": 3.3
+    },
+    {
+      "grade": "B",
+      "minimum_mark": 65,
+      "maximum_mark": 69,
+      "grade_point": 3.0
+    },
+    {
+      "grade": "B-",
+      "minimum_mark": 60,
+      "maximum_mark": 64,
+      "grade_point": 2.7
+    },
+    {
+      "grade": "C+",
+      "minimum_mark": 55,
+      "maximum_mark": 59,
+      "grade_point": 2.3
+    },
+    {
+      "grade": "C",
+      "minimum_mark": 50,
+      "maximum_mark": 54,
+      "grade_point": 2.0
+    },
+    {
+      "grade": "C-",
+      "minimum_mark": 45,
+      "maximum_mark": 49,
+      "grade_point": 1.7
+    },
+    {
+      "grade": "D+",
+      "minimum_mark": 40,
+      "maximum_mark": 44,
+      "grade_point": 1.3
+    },
+    {
+      "grade": "D",
+      "minimum_mark": 30,
+      "maximum_mark": 39,
+      "grade_point": 1.0
+    },
+    {
+      "grade": "E",
+      "minimum_mark": 0,
+      "maximum_mark": 29,
+      "grade_point": 0.0
+    }
+  ],
+  "fgpa_year_weights": {
+    "1": 0.2,
+    "2": 0.2,
+    "3": 0.3,
+    "4": 0.3
+  },
+  "classifications": [
+    {
+      "minimum_fgpa": 3.7,
+      "maximum_fgpa": 4.0,
+      "class": "FIRST CLASS"
+    },
+    {
+      "minimum_fgpa": 3.3,
+      "maximum_fgpa": 3.69,
+      "class": "SECOND CLASS (UPPER DIVISION)"
+    },
+    {
+      "minimum_fgpa": 2.7,
+      "maximum_fgpa": 3.29,
+      "class": "SECOND CLASS (LOWER DIVISION)"
+    },
+    {
+      "minimum_fgpa": 2.0,
+      "maximum_fgpa": 2.69,
+      "class": "PASS"
+    }
+  ],
+  "elective_requirements": {
+    "IS": {
+      "5": 10,
+      "7": 9,
+      "8": 9
+    },
+    "SE": {
+      "5": 10,
+      "6": 10,
+      "8": 8
+    },
+    "DS": {
+      "5": 4,
+      "6": 2,
+      "7": 4,
+      "8": 2
+    }
+  },
+  "calculation_notes": [
+    "Semester GPA is credit-weighted: sum(credit * grade_point) / sum(GPA credits).",
+    "Year GPA combines the two semesters in that year using all included GPA module credits; do not average semester GPAs.",
+    "FGPA = 0.20*Year1 + 0.20*Year2 + 0.30*Year3 + 0.30*Year4.",
+    "Missing marks and future results are not zero; incomplete results must remain pending.",
+    "Non-GPA modules and modules with null credits are excluded until official GPA eligibility/credit is confirmed.",
+    "Only student-selected electives are included in their own GPA record.",
+    "For successful repeats, effective grade is C (2.00) according to the supplied rule; repeat pass-threshold procedure needs faculty confirmation."
+  ]
+}
